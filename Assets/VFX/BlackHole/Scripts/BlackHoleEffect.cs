@@ -38,7 +38,7 @@ namespace VFXDuAN.BlackHole
 
         private void OnEnable()
         {
-            if (autoBuild && transform.Find(GeneratedRootName) == null)
+            if (autoBuild)
                 Build();
             else
                 CacheGeneratedChildren();
