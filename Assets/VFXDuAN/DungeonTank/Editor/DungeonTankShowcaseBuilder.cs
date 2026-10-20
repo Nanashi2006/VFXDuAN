@@ -28,7 +28,6 @@ namespace VFXDuAN.DungeonTank.Editor
             EnsureFolders();
 
             Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
-            scene.name = "DungeonTank_Showcase";
 
             GameObject teacher = Group("00_TEACHER_GUIDE__OPEN_ME");
             GameObject systems = Group("01_SYSTEMS__SAVE_RESPAWN_GAME_MANAGER");
