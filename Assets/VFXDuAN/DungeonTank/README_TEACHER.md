@@ -7,7 +7,7 @@ Use Unity menu:
 
 `Tools > VFXDuAN > Build POLISHED Melee Dungeon Showcase`
 
-This first creates the base showcase, then applies the polished melee setup, exact package prefabs, animation controllers, wider dungeon layout, HP bars, VFX, lighting and checkpoint presentation.
+This first creates the base showcase, then applies the polished melee setup, exact package prefabs, animation controllers, wider dungeon layout, HP bars, VFX, lighting, checkpoint presentation and third-person camera.
 
 ## Imported package usage
 - `Assets/StylizedHandPaintedDungeon(Free)` -> Floor, Wall, Wall_Entrance, Door, Pillar, Lamp_01, Lamp_02
@@ -23,10 +23,15 @@ The four Asset Store packages remain local and are not required to be redistribu
 - Left Mouse or Space: melee attack
 - E inside checkpoint: save respawn checkpoint
 - R: reset saved checkpoint
+- Hold Right Mouse Button: freely orbit the third-person camera around the player
+- Mouse Wheel: zoom the third-person camera in/out
 
 Player melee attack uses an `AttackPoint`, short melee radius and one damage application per swing. There is no projectile gameplay in the polished build.
 
 Skeleton enemies chase the player, stop before contact, attack at melee range and use trigger-only colliders so they do not physically push the player.
+
+## Third-person camera
+The `DungeonCameraFollow` system follows behind the Crusader by default, smoothly recenters behind the player's facing direction, supports right-mouse orbit, mouse-wheel zoom and dungeon wall collision so the camera moves closer instead of clipping through walls.
 
 ## Health
 - Player: 100 HP with runtime HUD bar
