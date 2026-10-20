@@ -16,7 +16,7 @@ namespace VFXDuAN.DungeonTank
 
         [Header("Player / Respawn")]
         public CrusaderTankHealth player;
-        [Min(0.1f)] public float respawnDelay = 1.35f;
+        [Min(0.1f)] public float respawnDelay = 1.8f;
 
         [Header("Runtime status")]
         [SerializeField] private int activeCheckpointIndex;
@@ -84,7 +84,7 @@ namespace VFXDuAN.DungeonTank
 
         private IEnumerator RespawnRoutine(CrusaderTankHealth tank)
         {
-            StatusMessage = "TANK DESTROYED • Respawning at last checkpoint...";
+            StatusMessage = "CRUSADER DEFEATED • Respawning at last checkpoint...";
             yield return new WaitForSeconds(respawnDelay);
 
             tank.ReviveAt(respawnPosition, respawnRotation);
@@ -142,11 +142,11 @@ namespace VFXDuAN.DungeonTank
                 padding = new RectOffset(14, 14, 12, 12)
             };
 
-            string health = player != null ? $"HP: {Mathf.CeilToInt(player.CurrentHealth)} / {Mathf.CeilToInt(player.MaxHealth)}" : "HP: --";
             string checkpoint = activeCheckpointIndex > 0 ? $"Respawn: CHECKPOINT {activeCheckpointIndex}" : "Respawn: START";
-            string controls = "W/S Move  •  A/D Turn  •  LMB/Space Fire  •  E Save CP  •  R Reset Save";
+            string controls = "W/S Move  •  A/D Turn  •  LMB/Space Melee Attack  •  E Save CP  •  R Reset Save";
 
-            GUI.Box(new Rect(16f, 16f, 600f, 105f), $"DUNGEON CRUSADER • VFX SHOWCASE\n{health}   |   {checkpoint}\n{StatusMessage}\n{controls}", panel);
+            GUI.Box(new Rect(16f, 16f, 680f, 88f),
+                $"DUNGEON CRUSADER • MELEE VFX SHOWCASE\n{checkpoint}   |   {StatusMessage}\n{controls}", panel);
         }
 
         private static bool ResetPressed()
