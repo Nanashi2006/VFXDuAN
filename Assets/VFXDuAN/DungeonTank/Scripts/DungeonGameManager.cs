@@ -143,10 +143,10 @@ namespace VFXDuAN.DungeonTank
             };
 
             string checkpoint = activeCheckpointIndex > 0 ? $"Respawn: CHECKPOINT {activeCheckpointIndex}" : "Respawn: START";
-            string controls = "W/S Move  •  A/D Turn  •  LMB/Space Melee Attack  •  E Save CP  •  R Reset Save";
+            string controls = "W/S Move • A/D Turn • LMB/Space Attack • E Save • R Reset • Hold RMB Orbit Camera • Mouse Wheel Zoom";
 
-            GUI.Box(new Rect(16f, 16f, 680f, 88f),
-                $"DUNGEON CRUSADER • MELEE VFX SHOWCASE\n{checkpoint}   |   {StatusMessage}\n{controls}", panel);
+            GUI.Box(new Rect(16f, 16f, 850f, 88f),
+                $"DUNGEON CRUSADER • THIRD-PERSON MELEE VFX SHOWCASE\n{checkpoint}   |   {StatusMessage}\n{controls}", panel);
         }
 
         private static bool ResetPressed()
